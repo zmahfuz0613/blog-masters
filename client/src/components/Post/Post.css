@@ -10,7 +10,9 @@
 }
 
 .container {
-  /* display: flex; */
+  height: max-content;
+  min-width: 300px;
+  max-width: 300px;
 }
 
 .post:hover {
@@ -32,9 +34,8 @@
 
 .post__author {
   display: flex;
-  margin-top: auto;
+  margin-top: inherit;
   font-family: monospace;
-  
 }
 
 a {
