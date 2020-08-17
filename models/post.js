@@ -12,3 +12,4 @@ const Post = new Schema(
 )
 
 module.exports = mongoose.model('posts', Post)
+// wop (Work on progress)
