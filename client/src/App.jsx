@@ -14,9 +14,9 @@ function App() {
       <Nav />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/:id" component={PostDetail} />
         <Route exact path="/create-post" component={PostCreate} />
-        <Route exact path="/edit-post" component={PostEdit} />
+        <Route exact path="/edit-post/:id/edit" component={PostEdit} />
+        <Route exact path="/:id" component={PostDetail} />
       </Switch>
       <Footer />
     </div>
