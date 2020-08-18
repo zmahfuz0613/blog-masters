@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import './PostCreate.css'
+import { Redirect } from 'react-router-dom'
 import { createPost } from '../../services/posts'
+import './PostCreate.css'
 
 function PostCreate() {
   const [post, setPost] = useState({
@@ -11,16 +12,30 @@ function PostCreate() {
 
   })
 
+  const [isCreated, setCreated] = useState(false)
+
   const handleChange = (e) => {
     const { name, value } = e.target
     setPost({
       ...post, 
       [name]: value
     })
+
+    
     
 
 
   }
+
+  const hanleSubmit = async (e) => {
+    e.preventDefault()
+    const created = await createPost(post)
+    setCreated({created})
+
+  }
+
+  if (isCreated) return <Redirect to={`/`} />
+   
 
 
 
@@ -31,11 +46,11 @@ function PostCreate() {
       <h1>Create Your Post</h1>
     </div>
     <div>
-        <form>
-          <input onChange={handleChange} name="title"  placeholder="Title" value={post.title}></input>
-          <textarea onChange={handleChange} name="body"  placeholder="Your Entry" value={post.body}></textarea>
-          <input onChange={handleChange} name="imgURL" placeholder="Insert Image" value={post.imgURL}></input>
-          <input onChange={handleChange} name="author" placeholder="Author" value={post.author}></input>
+        <form onSubmit={hanleSubmit}>
+          <input onChange={handleChange} name="title"  placeholder="Title" value={post.title} required></input>
+          <textarea onChange={handleChange} name="body"  placeholder="Your Entry" value={post.body} required></textarea>
+          <input onChange={handleChange} name="imgURL" placeholder="Insert Image" value={post.imgURL} required></input>
+          <input onChange={handleChange} name="author" placeholder="Author" value={post.author} required></input>
           <button type="submit" >SUBMIT</button>
 
       </form>
