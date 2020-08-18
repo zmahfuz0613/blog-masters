@@ -67,3 +67,8 @@
 .post-detail__buttons > button:hover {
   background-color: gray;
 }
+
+.post-detail--link {
+  text-decoration: none;
+  color: white;
+}

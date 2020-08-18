@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, Redirect } from 'react-router-dom'
+import { useParams, Redirect, Link } from 'react-router-dom'
 import './PostDetail.css'
 import { getPost, deletePost } from '../../services/posts'
 
@@ -44,9 +44,12 @@ function PostDetail(props) {
       <p className="post-detail__body">{post.body}</p>
       <div className="post-detail__buttons">
         <button>
-          {/* <Link className="edit-link" to={`/products/${product._id}/edit`}> */}
-          Edit
-          {/* </Link> */}
+          <Link
+            className="post-detail--link"
+            to={`/edit-post/${post._id}/edit`}
+          >
+            Edit
+          </Link>
         </button>
         <button onClick={handleDeletePost}>Delete</button>
       </div>
