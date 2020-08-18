@@ -7,6 +7,7 @@ import Home from './screens/Home/Home'
 import PostDetail from './screens/PostDetail/PostDetail'
 import PostCreate from './screens/PostCreate/PostCreate'
 import PostEdit from './screens/PostEdit/PostEdit'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route exact path="/create-post" component={PostCreate} />
         <Route exact path="/edit-post/:id/edit" component={PostEdit} />
         <Route exact path="/:id" component={PostDetail} />
-      </Switch>
+        </Switch>
       <Footer />
     </div>
   )
