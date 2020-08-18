@@ -10,6 +10,7 @@ function PostEdit(props) {
     imgURL: '',
     body: '',
   })
+  const [isLoaded, setLoaded] = useState(false)
   const [isUpdated, setUpdated] = useState(false)
   let { id } = useParams()
 
@@ -17,6 +18,7 @@ function PostEdit(props) {
     const fetchPost = async () => {
       const post = await getPost(id)
       setPost(post)
+      setLoaded(true)
     }
     fetchPost()
   }, [id])
@@ -33,28 +35,19 @@ function PostEdit(props) {
     e.preventDefault()
     let { id } = props.match.params
     const updated = await updatePost(id, post)
-    setUpdated(updated)
+    setUpdated({ updated })
+  }
+
+  if (isUpdated) {
+    return <Redirect to={`/${props.match.params.id}`} />
+  }
+
+  if (!isLoaded) {
+    return <h1>Loading... Please wait.</h1>
   }
 
   return (
     <div className="post-edit">
-      {/* <div className="image-container">
-        <img
-          className="edit-product-image"
-          src={post.imgURL}
-          alt={post.title}
-        />
-        <form onSubmit={handleSubmit}>
-          <input
-            className="edit-input-image-link"
-            placeholder="Image Link"
-            value={post.imgURL}
-            name="imgURL"
-            required
-            onChange={handleChange}
-          />
-        </form>
-      </div> */}
       <form className="edit-form" onSubmit={handleSubmit}>
         <label for="title">Title:</label>
         <input
@@ -95,9 +88,9 @@ function PostEdit(props) {
           required
           onChange={handleChange}
         />
-        <Link className="post-detail--link" to={`/edit-post/${post._id}/edit`}>
+        <div className="post-detail--link">
           <button>Update Post</button>
-        </Link>
+        </div>
       </form>
     </div>
   )
