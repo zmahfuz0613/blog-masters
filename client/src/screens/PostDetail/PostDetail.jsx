@@ -42,14 +42,9 @@ function PostDetail(props) {
       <img className="post-detail__image" src={post.imgURL} alt={post.title} />
       <p className="post-detail__body">{post.body}</p>
       <div className="post-detail__buttons">
-        <button>
-          <Link
-            className="post-detail--link"
-            to={`/edit-post/${post._id}/edit`}
-          >
-            Edit
-          </Link>
-        </button>
+        <Link className="post-detail--link" to={`/edit-post/${post._id}/edit`}>
+          <button>Edit</button>
+        </Link>
         <button onClick={handleDeletePost}>Delete</button>
       </div>
     </div>

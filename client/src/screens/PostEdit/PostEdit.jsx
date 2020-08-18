@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import './PostEdit.css'
-import { useParams, Redirect, Link } from 'react-router-dom'
+import { useParams, Redirect } from 'react-router-dom'
 import { getPost, updatePost } from '../../services/posts'
 
-function PostEdit() {
-  const [post, setPost] = useState(null)
+function PostEdit(props) {
+  const [post, setPost] = useState({
+    title: '',
+    author: '',
+    imgURL: '',
+    body: '',
+  })
   const [isLoaded, setLoaded] = useState(false)
   const [isUpdated, setUpdated] = useState(false)
-  const { id } = useParams()
-  const iconURL =
-    'https://www.shareicon.net/data/256x256/2016/08/18/814062_user_512x512.png'
+  let { id } = useParams()
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -18,10 +21,26 @@ function PostEdit() {
       setLoaded(true)
     }
     fetchPost()
-    console.log(setUpdated, updatePost)
   }, [id])
 
-  if (isUpdated) return <Redirect to={`/`} />
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setPost({
+      ...post,
+      [name]: value,
+    })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    let { id } = props.match.params
+    const updated = await updatePost(id, post)
+    setUpdated({ updated })
+  }
+
+  if (isUpdated) {
+    return <Redirect to={`/${props.match.params.id}`} />
+  }
 
   if (!isLoaded) {
     return <h1>Loading... Please wait.</h1>
@@ -29,18 +48,50 @@ function PostEdit() {
 
   return (
     <div className="post-edit">
-      <h1 className="post-edit__title">{post.title}</h1>
-      <div className="post-edit__author">
-        <img src={iconURL} alt="MJ" />
-        <h2>{post.author}</h2>
-      </div>
-      <img className="post-edit__image" src={post.imgURL} alt={post.title} />
-      <p className="post-edit__body">{post.body}</p>
-      <div className="post-edit__buttons">
-        <Link className="post-edit__button" to={`/edit-post/${post._id}/edit`}>
-          <button onClick={() => alert('EDITED!')}>Edit</button>
-        </Link>
-      </div>
+      <form className="edit-form" onSubmit={handleSubmit}>
+        <label for="title">Title:</label>
+        <input
+          placeholder="Update title"
+          value={post.title}
+          name="title"
+          id="title"
+          required
+          autoFocus
+          onChange={handleChange}
+        />
+        <label for="author">Author:</label>
+        <input
+          placeholder="Update author"
+          value={post.author}
+          name="author"
+          id="author"
+          required
+          onChange={handleChange}
+        />
+        <label for="imgURL">Image URL:</label>
+        <input
+          placeholder="Update image"
+          value={post.imgURL}
+          name="imgURL"
+          id="imgURL"
+          required
+          onChange={handleChange}
+        />
+        <label for="body">Body:</label>
+        <textarea
+          rows={9}
+          cols={78}
+          placeholder="Body"
+          value={post.body}
+          name="body"
+          id="body"
+          required
+          onChange={handleChange}
+        />
+        <div className="post-detail--link">
+          <button>Update Post</button>
+        </div>
+      </form>
     </div>
   )
 }

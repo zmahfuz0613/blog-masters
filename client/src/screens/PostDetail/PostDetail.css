@@ -64,11 +64,25 @@
   margin-right: 20px;
 }
 
-.post-detail__buttons > button:hover {
-  background-color: gray;
+.post-detail--link > button {
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 10px;
+  font-family: inherit;
+  margin-right: 20px;
 }
 
 .post-detail--link {
   text-decoration: none;
   color: white !important;
+}
+
+.post-detail--link > button:hover {
+  background-color: gray;
 }
