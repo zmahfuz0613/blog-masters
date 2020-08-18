@@ -4,7 +4,6 @@ import './PostDetail.css'
 import { getPost, deletePost } from '../../services/posts'
 
 function PostDetail(props) {
-  console.log(props)
   const [post, setPost] = useState(null)
   const [isLoaded, setLoaded] = useState(false)
   const [isDeleted, setDeleted] = useState(false)
