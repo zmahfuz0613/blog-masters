@@ -1,10 +1,10 @@
-.post {
+/* .post {
   padding: 20px;
 }
 
 .post__image {
   height: 200px;
-}
+} */
 /* Larger Option */
 
 /* .post {
@@ -70,18 +70,20 @@ a:visited {
   margin-bottom: 60px;
   border-radius: 20%;
   transform: scale(0.7);
+  min-width: 300px;
+  max-width: 300px;
 }
 
 .container {
   width: max-content;
   height: max-content;
   font-size: x-small;
-  min-width: 300px;
-  max-width: 300px;
+  
 }
 
 .post:hover {
   transform: scale(0.6) translate(-2%, -4%);
+  color: red;
 }
 
 .post__title {
