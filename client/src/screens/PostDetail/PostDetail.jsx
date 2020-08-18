@@ -21,16 +21,11 @@ function PostDetail(props) {
     fetchPost()
   }, [id])
 
-  const handleDeletePost = () => {
-    deletePost(post._id)
-    setDeleted(true)
+  const handleDeletePost = async (e) => {
+    e.preventDefault()
+    const deleted = await deletePost(post._id)
+    setDeleted({ deleted })
   }
-
-  // const hanleSubmit = async (e) => {
-  //   e.preventDefault()
-  //   const created = await createPost(post)
-  //   setCreated({ created })
-  // }
 
   if (isDeleted) return <Redirect to={`/`} />
 
