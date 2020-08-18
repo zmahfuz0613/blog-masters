@@ -5,6 +5,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   margin: 0 100px;
+  margin-bottom: 100px;
 }
 
 .post-detail__title {
@@ -85,4 +86,11 @@
 
 .post-detail--link > button:hover {
   background-color: gray;
+}
+
+@media (max-width: 600px){
+  .post-detail__image{
+    width: 100%;
+    height: 150px;
+  }
 }

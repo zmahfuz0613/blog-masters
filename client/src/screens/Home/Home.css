@@ -3,4 +3,5 @@
   flex: 1;
   justify-content: center;
   flex-flow: row wrap;
+  margin-bottom: 30px;
 }
