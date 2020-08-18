@@ -9,6 +9,8 @@ function PostEdit() {
   const [isUpdated, setUpdated] = useState(false)
   const { id } = useParams()
 
+  console.log(setUpdated)
+
   useEffect(() => {
     const fetchPost = async () => {
       const post = await getPost(id)
@@ -16,6 +18,7 @@ function PostEdit() {
       setLoaded(true)
     }
     fetchPost()
+    console.log(setUpdated, updatePost)
   }, [id])
 
   if (isUpdated) return <Redirect to={`/`} />
