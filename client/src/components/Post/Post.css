@@ -85,6 +85,7 @@ a:visited {
   transform: scale(0.6) translate(-2%, -4%);
   color: red;
 }
+
 .post__title {
   display: flex;
   margin-bottom: auto;
