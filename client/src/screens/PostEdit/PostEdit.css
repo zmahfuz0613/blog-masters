@@ -4,8 +4,31 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: 0 100px;
+  margin: 0 auto;
 }
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form > label {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.edit-form > input {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.edit-form > textarea {
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+/* 
 
 .post-edit__title {
   font-family: 'Playfair Display', serif;
@@ -65,4 +88,4 @@
 }
 .post-edit__button > button:hover {
   background-color: gray;
-}
+} */

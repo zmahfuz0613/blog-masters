@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin: 0 100px;
+  margin: 0 auto;
 }
 
 .post-detail__title {

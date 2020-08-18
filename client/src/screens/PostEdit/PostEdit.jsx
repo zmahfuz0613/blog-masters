@@ -56,35 +56,51 @@ function PostEdit(props) {
         </form>
       </div> */}
       <form className="edit-form" onSubmit={handleSubmit}>
+        <label for="title">Title:</label>
         <input
-          className="input-name"
-          placeholder="Name"
+          className="edit-form__title"
+          placeholder="Update title"
           value={post.title}
           name="title"
+          id="title"
           required
           autoFocus
           onChange={handleChange}
         />
+        <label for="author">Author:</label>
         <input
-          className="input-price"
-          placeholder="author"
+          className="edit-form__author"
+          placeholder="Update author"
           value={post.author}
           name="author"
+          id="author"
           required
           onChange={handleChange}
         />
+        <label for="imgURL">Image URL:</label>
+        <input
+          className="edit-form__imgURL"
+          placeholder="Update image"
+          value={post.imgURL}
+          name="imgURL"
+          id="imgURL"
+          required
+          onChange={handleChange}
+        />
+        <label for="body">Body:</label>
         <textarea
-          className="textarea-description"
-          rows={10}
+          className="edit-form__body"
+          rows={9}
           cols={78}
-          placeholder="Description"
+          placeholder="Body"
           value={post.body}
           name="body"
+          id="body"
           required
           onChange={handleChange}
         />
         <button type="submit" className="save-button">
-          Save
+          Update Post
         </button>
       </form>
     </div>
