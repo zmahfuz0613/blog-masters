@@ -3,44 +3,90 @@ import './PostEdit.css'
 import { useParams, Redirect, Link } from 'react-router-dom'
 import { getPost, updatePost } from '../../services/posts'
 
-function PostEdit() {
-  const [post, setPost] = useState(null)
-  const [isLoaded, setLoaded] = useState(false)
+function PostEdit(props) {
+  const [post, setPost] = useState({
+    title: '',
+    author: '',
+    imgURL: '',
+    body: '',
+  })
   const [isUpdated, setUpdated] = useState(false)
-  const { id } = useParams()
-  const iconURL =
-    'https://www.shareicon.net/data/256x256/2016/08/18/814062_user_512x512.png'
+  let { id } = useParams()
 
   useEffect(() => {
     const fetchPost = async () => {
       const post = await getPost(id)
       setPost(post)
-      setLoaded(true)
     }
     fetchPost()
-    console.log(setUpdated, updatePost)
   }, [id])
 
-  if (isUpdated) return <Redirect to={`/`} />
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setPost({
+      ...post,
+      [name]: value,
+    })
+  }
 
-  if (!isLoaded) {
-    return <h1>Loading... Please wait.</h1>
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    let { id } = props.match.params
+    const updated = await updatePost(id, post)
+    setUpdated(updated)
   }
 
   return (
     <div className="post-edit">
-      <h1 className="post-edit__title">{post.title}</h1>
-      <div className="post-edit__author">
-        <img src={iconURL} alt="MJ" />
-        <h2>{post.author}</h2>
-      </div>
-      <img className="post-edit__image" src={post.imgURL} alt={post.title} />
-      <p className="post-edit__body">{post.body}</p>
-      <div className="post-edit__buttons">
-        <Link className="post-edit__button" to={`/edit-post/${post._id}/edit`}>
-          <button onClick={() => alert('EDITED!')}>Edit</button>
-        </Link>
-      </div>
+      {/* <div className="image-container">
+        <img
+          className="edit-product-image"
+          src={post.imgURL}
+          alt={post.title}
+        />
+        <form onSubmit={handleSubmit}>
+          <input
+            className="edit-input-image-link"
+            placeholder="Image Link"
+            value={post.imgURL}
+            name="imgURL"
+            required
+            onChange={handleChange}
+          />
+        </form>
+      </div> */}
+      <form className="edit-form" onSubmit={handleSubmit}>
+        <input
+          className="input-name"
+          placeholder="Name"
+          value={post.title}
+          name="title"
+          required
+          autoFocus
+          onChange={handleChange}
+        />
+        <input
+          className="input-price"
+          placeholder="author"
+          value={post.author}
+          name="author"
+          required
+          onChange={handleChange}
+        />
+        <textarea
+          className="textarea-description"
+          rows={10}
+          cols={78}
+          placeholder="Description"
+          value={post.body}
+          name="body"
+          required
+          onChange={handleChange}
+        />
+        <button type="submit" className="save-button">
+          Save
+        </button>
+      </form>
     </div>
   )
 }
