@@ -24,6 +24,4 @@ function Footer() {
 
 export default Footer
 
-// <a className="zun" target="_blank" rel="noopener noreferrer" href="https://avatars0.githubusercontent.com/u/62552898?s=460&u=d82b01bb13efe8c2dc3a366b1214c479283d9ae9&v=4"></a>
-
 
