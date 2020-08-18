@@ -7,15 +7,14 @@ const Post = ({ _id, title, imgURL, body, author }) => {
     <React.Fragment>
       <Link className="post" to={`/${_id}`}>
         <div className="post__title">{title}</div>
-        <div className="post__author">Written by: {author}</div>
         <img className="post__image" src={imgURL} alt={title} />
-        <div className="post__body">{body}</div>
+        <div className="post__author">Written by: {author}</div>
       </Link>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default Post
+export default Post;
 
 //       <div className="container">
 //         <Link className="post" to={`/${_id}`}>
@@ -30,4 +29,3 @@ export default Post
 // };
 
 // export default Post;
-
