@@ -2,6 +2,20 @@ import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import { createPost } from '../../services/posts'
 import './PostCreate.css'
+import styled, { keyframes } from "styled-components";
+import { fadeInLeft, zoomIn} from "react-animations";
+
+
+
+const fadeInAnimation = keyframes`${fadeInLeft}`;
+const EntryDiv = styled.section`
+  animation: 4s ${fadeInAnimation};
+`;
+
+const zoomInAnimation = keyframes`${zoomIn}`;
+const TextDiv = styled.section`
+  animation: 2s ${zoomInAnimation};
+`;
 
 function PostCreate() {
   const [post, setPost] = useState({
@@ -42,19 +56,19 @@ function PostCreate() {
   
   return (
     <div className="create-main">
-    <div className="text-div">
+    <TextDiv className="text-div">
       <h1 className="your-post_text">Create Your Post</h1>
-    </div>
-    <div className="create-form_div">
+    </TextDiv>
+    <EntryDiv className="create-form_div">
         <form className="create-post_form" onSubmit={hanleSubmit}>
           <input className="create-input" onChange={handleChange} name="title" placeholder="Title" value={post.title} required></input>
           <input className="create-input" onChange={handleChange} name="author" placeholder="Author" value={post.author} required></input>
           <input className="create-input" onChange={handleChange} name="imgURL" placeholder="Insert Image" value={post.imgURL} required></input>
           <textarea className="create-textarea" onChange={handleChange} name="body"  placeholder="Your Entry" value={post.body} required></textarea>
-          <button type="submit" >SUBMIT</button>
+          <button type="submit" className="create-button" >SUBMIT</button>
 
       </form>
-      </div>
+      </EntryDiv>
       </div>
   )
 }
