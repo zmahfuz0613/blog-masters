@@ -14,9 +14,14 @@ function Home() {
     fetchPosts()
   }, [])
 
+  useEffect(() => {
+    console.log('hi')
+  })
+
   const renderPosts = allPosts.map((post, index) => {
     return (
       <Post
+        key={post._id}
         _id={post._id}
         title={post.title}
         author={post.author}
