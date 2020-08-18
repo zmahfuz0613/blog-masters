@@ -1,7 +1,6 @@
 .home {
   display: flex;
   flex: 1;
-  /* justify-content: space-around; */
   justify-content: center;
   flex-flow: row wrap;
 }

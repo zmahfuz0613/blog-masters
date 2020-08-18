@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './PostEdit.css'
-import { useParams, Redirect } from 'react-router-dom'
+import { useParams, Redirect, Link } from 'react-router-dom'
 import { getPost, updatePost } from '../../services/posts'
 
 function PostEdit() {
@@ -8,6 +8,8 @@ function PostEdit() {
   const [isLoaded, setLoaded] = useState(false)
   const [isUpdated, setUpdated] = useState(false)
   const { id } = useParams()
+  const iconURL =
+    'https://www.shareicon.net/data/256x256/2016/08/18/814062_user_512x512.png'
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -16,6 +18,7 @@ function PostEdit() {
       setLoaded(true)
     }
     fetchPost()
+    console.log(setUpdated, updatePost)
   }, [id])
 
   if (isUpdated) return <Redirect to={`/`} />
@@ -25,11 +28,19 @@ function PostEdit() {
   }
 
   return (
-    <div className="edit-post">
-      <h1>Edit the post titled:</h1>
-      <h1>{post.title}</h1>
-      <h4>with the id of:</h4>
-      <p>{post._id}</p>
+    <div className="post-edit">
+      <h1 className="post-edit__title">{post.title}</h1>
+      <div className="post-edit__author">
+        <img src={iconURL} alt="MJ" />
+        <h2>{post.author}</h2>
+      </div>
+      <img className="post-edit__image" src={post.imgURL} alt={post.title} />
+      <p className="post-edit__body">{post.body}</p>
+      <div className="post-edit__buttons">
+        <Link className="post-edit__button" to={`/edit-post/${post._id}/edit`}>
+          <button onClick={() => alert('EDITED!')}>Edit</button>
+        </Link>
+      </div>
     </div>
   )
 }
