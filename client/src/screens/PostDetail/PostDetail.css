@@ -1,0 +1,22 @@
+.post-detail {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.post-detail__title {
+  line-height: 42px;
+  font-size: 34px;
+}
+
+.post-detail__author {
+  font-weight: 400;
+  color: rgb(67, 145, 255);
+  font-size: 16px;
+}
+
+.post-detail__image {
+  height: 350px;
+}
