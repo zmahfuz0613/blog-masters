@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Redirect } from 'react-router-dom'
 import './PostDetail.css'
 import { getPost, deletePost } from '../../services/posts'
 
@@ -7,6 +7,7 @@ function PostDetail(props) {
   console.log(props)
   const [post, setPost] = useState(null)
   const [isLoaded, setLoaded] = useState(false)
+  // const [redirect, setRedirect] = useState(null)
   const iconURL =
     'https://www.shareicon.net/data/256x256/2016/08/18/814062_user_512x512.png'
   const { id } = useParams()
@@ -19,6 +20,17 @@ function PostDetail(props) {
     }
     fetchPost()
   }, [id])
+
+  useEffect(() => {
+    // fetch your data when the props.location changes
+  }, [props.location])
+
+  const handleDeletePost = () => {
+    deletePost(post._id)
+    // this.history.push('/')
+    props.history.goBack()
+    // console.log(props.history.goBack())
+  }
 
   if (!isLoaded) {
     return <h1>Loading... Please wait.</h1>
@@ -39,12 +51,7 @@ function PostDetail(props) {
           Edit
           {/* </Link> */}
         </button>
-        <button
-
-        // onClick={() => deleteProduct(product._id)}
-        >
-          Delete
-        </button>
+        <button onClick={handleDeletePost}>Delete</button>
       </div>
     </div>
   )
