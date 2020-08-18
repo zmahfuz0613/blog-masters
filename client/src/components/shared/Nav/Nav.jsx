@@ -6,7 +6,7 @@ import { Navbar } from 'react-bootstrap'
 function Nav() {
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" color="#ff4000">
+      <Navbar collapseOnSelect expand="lg">
         <Navbar.Brand>
           <Link to="/">BLOG MASTER 3000</Link>
         </Navbar.Brand>

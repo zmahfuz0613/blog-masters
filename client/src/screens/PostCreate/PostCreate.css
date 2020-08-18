@@ -1,5 +1,5 @@
 .create-main {
-  
+  flex: 1;
 }
 
 .text-div {
@@ -11,7 +11,6 @@
 
 .your-post_text {
   font-size: 40px;
-
 }
 
 .create-form_div {
@@ -20,26 +19,22 @@
   align-items: center;
   flex-direction: column;
   height: 500px;
-  
 }
 
 .create-post_form {
   display: flex;
   flex-direction: column;
-
-  
 }
-.create-input, .create-textarea {
+.create-input,
+.create-textarea {
   font-size: 28px;
   width: 500px;
   margin: 20px;
   height: 30px;
   border: unset;
-  border-bottom:  solid black;
+  border-bottom: solid black;
   outline: none;
   text-align: center;
-
-
 }
 ::placeholder {
   text-align: center;
