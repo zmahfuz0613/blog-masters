@@ -14,10 +14,6 @@ function Home() {
     fetchPosts()
   }, [])
 
-  useEffect(() => {
-    console.log('hi')
-  })
-
   const renderPosts = allPosts.map((post, index) => {
     return (
       <Post
