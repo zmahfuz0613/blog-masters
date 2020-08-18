@@ -41,21 +41,21 @@ function PostCreate() {
 
   
   return (
-    <>
-    <div>
-      <h1>Create Your Post</h1>
+    <div className="create-main">
+    <div className="text-div">
+      <h1 className="your-post_text">Create Your Post</h1>
     </div>
-    <div>
-        <form onSubmit={hanleSubmit}>
-          <input onChange={handleChange} name="title"  placeholder="Title" value={post.title} required></input>
-          <textarea onChange={handleChange} name="body"  placeholder="Your Entry" value={post.body} required></textarea>
-          <input onChange={handleChange} name="imgURL" placeholder="Insert Image" value={post.imgURL} required></input>
-          <input onChange={handleChange} name="author" placeholder="Author" value={post.author} required></input>
+    <div className="create-form_div">
+        <form className="create-post_form" onSubmit={hanleSubmit}>
+          <input className="create-input" onChange={handleChange} name="title" placeholder="Title" value={post.title} required></input>
+          <input className="create-input" onChange={handleChange} name="author" placeholder="Author" value={post.author} required></input>
+          <input className="create-input" onChange={handleChange} name="imgURL" placeholder="Insert Image" value={post.imgURL} required></input>
+          <textarea className="create-textarea" onChange={handleChange} name="body"  placeholder="Your Entry" value={post.body} required></textarea>
           <button type="submit" >SUBMIT</button>
 
       </form>
       </div>
-      </>
+      </div>
   )
 }
 
