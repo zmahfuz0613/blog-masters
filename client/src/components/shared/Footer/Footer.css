@@ -4,4 +4,22 @@
   align-items: center;
   padding: 20px 0 20px 2rem;
   min-height: 10%;
+  justify-content: space-around;
 }
+
+.zun, 
+.barnett,
+.bob,
+.sebastian{
+  height: 50px;
+  border-radius: 80%;
+}
+
+.zun:hover, 
+.barnett:hover, 
+.bob:hover, 
+.sebastian:hover{
+  transform: scale(1.5);
+  transition: 250ms all;
+}
+
