@@ -10,7 +10,7 @@
 .post-detail__title {
   font-family: 'Playfair Display', serif;
   line-height: 42px;
-  font-size: 42px;
+  font-size: 34px;
 }
 
 .post-detail__author {
@@ -19,21 +19,21 @@
   padding: 10px 0;
 }
 .post-detail__author > img {
-  height: 30px;
+  height: 20px;
 }
 
 .post-detail__author > h2 {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: rgb(67, 145, 255);
-  font-size: 16px;
+  font-size: 14px;
   margin-left: 10px;
 }
 
 .post-detail__image {
   align-self: center;
   margin-top: 10px;
-  height: 50%;
+  height: 300px;
   width: 100%;
   object-fit: cover;
 }
@@ -41,5 +41,6 @@
 .post-detail__body {
   margin-top: 10px;
   padding: 10px 0;
-  font-size: 18px;
+  font-size: 20px;
+  font-family: 'Libre Caslon Display', serif;
 }
