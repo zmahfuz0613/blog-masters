@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './PostEdit.css'
-import { useParams, Redirect, Link } from 'react-router-dom'
+import { useParams, Redirect } from 'react-router-dom'
 import { getPost, updatePost } from '../../services/posts'
 
 function PostEdit(props) {
