@@ -58,7 +58,6 @@ function PostEdit(props) {
       <form className="edit-form" onSubmit={handleSubmit}>
         <label for="title">Title:</label>
         <input
-          className="edit-form__title"
           placeholder="Update title"
           value={post.title}
           name="title"
@@ -79,7 +78,7 @@ function PostEdit(props) {
         />
         <label for="imgURL">Image URL:</label>
         <input
-          className="edit-form__imgURL"
+          // className="edit-form__imgURL"
           placeholder="Update image"
           value={post.imgURL}
           name="imgURL"
@@ -89,7 +88,7 @@ function PostEdit(props) {
         />
         <label for="body">Body:</label>
         <textarea
-          className="edit-form__body"
+          // className="edit-form__body"
           rows={9}
           cols={78}
           placeholder="Body"
@@ -99,9 +98,9 @@ function PostEdit(props) {
           required
           onChange={handleChange}
         />
-        <button type="submit" className="save-button">
-          Update Post
-        </button>
+        <Link className="post-detail--link" to={`/edit-post/${post._id}/edit`}>
+          <button>Update Post</button>
+        </Link>
       </form>
     </div>
   )
