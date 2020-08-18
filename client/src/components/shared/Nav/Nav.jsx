@@ -20,12 +20,12 @@ function Nav() {
             <Link className="nav-link nav-link-important" to="/create-post">
               Create Post
             </Link>
-            <Link className="nav-link nav-link-important" to="/footer">
+            {/* <Link className="nav-link nav-link-important" to="/footer">
               Contact us
             </Link>
             <Link className="nav-link nav-link-important" to="#">
               sign up
-            </Link>
+            </Link> */}
           </Navbar>
         </Navbar.Collapse>
       </Navbar>
