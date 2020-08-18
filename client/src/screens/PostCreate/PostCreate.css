@@ -1,6 +1,10 @@
 .create-main {
+
   background-color: white
   
+
+  flex: 1;
+
 }
 
 .text-div {
@@ -11,12 +15,14 @@
 }
 
 .your-post_text {
+
   font-size: 70px;
   font-weight: 900;
   color: rgb(95, 94, 94);
   
   font-family: 'Shadows Into Light', cursive;
  
+
 
 }
 
@@ -26,25 +32,26 @@
   align-items: center;
   flex-direction: column;
   height: 500px;
-  
 }
 
 .create-post_form {
   display: flex;
   flex-direction: column;
-  /* background-color: rgb(221, 241, 241); */
-  /* background: rgb(113, 158, 241); */
-  border-radius: 6px;
+
+ 
+ border-radius: 6px;
  padding: 20px;
 
-  
+
 }
-.create-input, .create-textarea {
+.create-input,
+.create-textarea {
   font-size: 28px;
   width: 500px;
   margin: 20px;
   height: 30px;
   border: unset;
+
   border-bottom:  solid black;
   border-radius: 6px;
   outline: none;
@@ -53,6 +60,9 @@
   
   
 
+
+
+ 
 
 }
 ::placeholder {
@@ -64,6 +74,7 @@
 .create-textarea {
   height: 100px;
 }
+
 
 .create-button {
   font-family: 'Balsamiq Sans', cursive;
@@ -89,3 +100,4 @@
   background: white;
   color: blue;
 }
+
