@@ -1,0 +1,74 @@
+.post-detail {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0 100px;
+}
+
+.post-detail__title {
+  font-family: 'Playfair Display', serif;
+  line-height: 42px;
+  font-size: 34px;
+}
+
+.post-detail__author {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+.post-detail__author > img {
+  height: 20px;
+}
+
+.post-detail__author > h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: rgb(67, 145, 255);
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.post-detail__image {
+  margin-top: 10px;
+  height: 300px;
+  width: 100%;
+  max-width: 800px;
+  object-fit: cover;
+}
+
+.post-detail__body {
+  margin-top: 10px;
+  padding: 10px 0;
+  font-size: 20px;
+  font-family: 'Libre Caslon Display', serif;
+  max-width: 800px;
+}
+
+.post-detail__buttons {
+  margin-top: 20px;
+}
+
+.post-detail__buttons > button {
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 10px;
+  font-family: inherit;
+  margin-right: 20px;
+}
+
+.post-detail__buttons > button:hover {
+  background-color: gray;
+}
+
+.post-detail--link {
+  text-decoration: none;
+  color: white !important;
+}
