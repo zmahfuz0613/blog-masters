@@ -7,7 +7,7 @@ function PostDetail(props) {
   console.log(props)
   const [post, setPost] = useState(null)
   const [isLoaded, setLoaded] = useState(false)
-  // const [redirect, setRedirect] = useState(null)
+  const [isDeleted, setDetelted] = useState(false)
   const iconURL =
     'https://www.shareicon.net/data/256x256/2016/08/18/814062_user_512x512.png'
   const { id } = useParams()
@@ -21,15 +21,8 @@ function PostDetail(props) {
     fetchPost()
   }, [id])
 
-  useEffect(() => {
-    // fetch your data when the props.location changes
-  }, [props.location])
-
   const handleDeletePost = () => {
     deletePost(post._id)
-    // this.history.push('/')
-    props.history.goBack()
-    // console.log(props.history.goBack())
   }
 
   if (!isLoaded) {
