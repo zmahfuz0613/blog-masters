@@ -7,6 +7,8 @@ function PostDetail(props) {
   console.log(props)
   const [post, setPost] = useState(null)
   const [isLoaded, setLoaded] = useState(false)
+  const iconURL =
+    'https://www.shareicon.net/data/256x256/2016/08/18/814062_user_512x512.png'
   const { id } = useParams()
 
   useEffect(() => {
@@ -25,9 +27,12 @@ function PostDetail(props) {
   return (
     <div className="post-detail">
       <h1 className="post-detail__title">{post.title}</h1>
-      <h2 className="post-detail__author">{post.author}</h2>
+      <div className="post-detail__author">
+        <img src={iconURL} alt="MJ" />
+        <h2>{post.author}</h2>
+      </div>
       <img className="post-detail__image" src={post.imgURL} alt={post.title} />
-      <p>{post.body}</p>
+      <p className="post-detail__body">{post.body}</p>
     </div>
   )
 }

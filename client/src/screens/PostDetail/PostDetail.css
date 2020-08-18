@@ -4,20 +4,42 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  margin: 0 30px;
 }
 
 .post-detail__title {
   font-family: 'Playfair Display', serif;
   line-height: 42px;
-  font-size: 34px;
+  font-size: 42px;
 }
 
 .post-detail__author {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+.post-detail__author > img {
+  height: 30px;
+}
+
+.post-detail__author > h2 {
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: rgb(67, 145, 255);
   font-size: 16px;
+  margin-left: 10px;
 }
 
 .post-detail__image {
-  height: 350px;
+  align-self: center;
+  margin-top: 10px;
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.post-detail__body {
+  margin-top: 10px;
+  padding: 10px 0;
+  font-size: 18px;
 }
