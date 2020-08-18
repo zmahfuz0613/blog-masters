@@ -1,7 +1,16 @@
-.nav {
+/* .navbar {
   border: 1px solid orange;
   display: flex;
   align-items: center;
   padding: 20px 0 20px 2rem;
   min-height: 10%;
+} */
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 0.75rem 2rem;
+  background: wheat;
+  z-index: 1;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

@@ -1,22 +1,30 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './Nav.css'
+import { Navbar } from 'react-bootstrap';
 
 function Nav() {
   return (
-    <div className="nav">
-      <NavLink to="/">
-        <h1>BLOG MASTER 3000</h1>
-      </NavLink>
-      <nav>
-        <NavLink to="/">
-          <h2>Posts</h2>
-        </NavLink>
-        <NavLink to="/create-post">
-          <h2>Create Post</h2>
-        </NavLink>
-      </nav>
-    </div>
+    <>
+    <Navbar collapseOnSelect expand="lg" color="#ff4000">
+        <Navbar.Brand>
+          <Link to="/">BLOG MASTER 3000</Link>
+        </Navbar.Brand>
+    <Navbar.Toggle aria-controls="responsive-Navbar-nav" />
+    <Navbar.Collapse id="responsive-Navbar-nav">
+    <Navbar className="mr-auto">      
+     </Navbar>
+     <Navbar>      
+            <Link className="nav-link nav-link-important" to="/posts">Posts</Link>
+            <Link className="nav-link nav-link-important" to="/create-post">Create Post</Link>
+            <Link className="nav-link nav-link-important" to="/footer">Contact us</Link>
+            <Link className="nav-link nav-link-important" to="#">sign up</Link>
+
+     </Navbar>
+    
+    </Navbar.Collapse>
+    </Navbar>      
+         </>
   )
 }
 
