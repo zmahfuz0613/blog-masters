@@ -7,7 +7,7 @@ function PostDetail(props) {
   console.log(props)
   const [post, setPost] = useState(null)
   const [isLoaded, setLoaded] = useState(false)
-  const [isDeleted, setDetelted] = useState(false)
+  const [isDeleted, setDeleted] = useState(false)
   const iconURL =
     'https://www.shareicon.net/data/256x256/2016/08/18/814062_user_512x512.png'
   const { id } = useParams()
@@ -23,7 +23,16 @@ function PostDetail(props) {
 
   const handleDeletePost = () => {
     deletePost(post._id)
+    setDeleted(true)
   }
+
+  // const hanleSubmit = async (e) => {
+  //   e.preventDefault()
+  //   const created = await createPost(post)
+  //   setCreated({ created })
+  // }
+
+  if (isDeleted) return <Redirect to={`/`} />
 
   if (!isLoaded) {
     return <h1>Loading... Please wait.</h1>
