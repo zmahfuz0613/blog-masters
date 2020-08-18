@@ -33,6 +33,19 @@ function PostDetail(props) {
       </div>
       <img className="post-detail__image" src={post.imgURL} alt={post.title} />
       <p className="post-detail__body">{post.body}</p>
+      <div className="post-detail__buttons">
+        <button>
+          {/* <Link className="edit-link" to={`/products/${product._id}/edit`}> */}
+          Edit
+          {/* </Link> */}
+        </button>
+        <button
+
+        // onClick={() => deleteProduct(product._id)}
+        >
+          Delete
+        </button>
+      </div>
     </div>
   )
 }
