@@ -68,7 +68,6 @@ function PostEdit(props) {
         />
         <label for="author">Author:</label>
         <input
-          className="edit-form__author"
           placeholder="Update author"
           value={post.author}
           name="author"
@@ -78,7 +77,6 @@ function PostEdit(props) {
         />
         <label for="imgURL">Image URL:</label>
         <input
-          // className="edit-form__imgURL"
           placeholder="Update image"
           value={post.imgURL}
           name="imgURL"
@@ -88,7 +86,6 @@ function PostEdit(props) {
         />
         <label for="body">Body:</label>
         <textarea
-          // className="edit-form__body"
           rows={9}
           cols={78}
           placeholder="Body"
