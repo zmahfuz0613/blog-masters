@@ -8,7 +8,7 @@ function Nav() {
     <>
       <Navbar collapseOnSelect expand="lg">
         <Navbar.Brand>
-          <Link to="/">BLOG MASTER 3000</Link>
+          <Link to="/">BLOG MASTERS</Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-Navbar-nav" />
         <Navbar.Collapse id="responsive-Navbar-nav">
@@ -20,12 +20,6 @@ function Nav() {
             <Link className="nav-link nav-link-important" to="/create-post">
               Create Post
             </Link>
-            {/* <Link className="nav-link nav-link-important" to="/footer">
-              Contact us
-            </Link>
-            <Link className="nav-link nav-link-important" to="#">
-              sign up
-            </Link> */}
           </Navbar>
         </Navbar.Collapse>
       </Navbar>
