@@ -5,10 +5,10 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: rgb(245, 245, 245);
   opacity: 0.9;
+  
 }
 nav.navbar.navbar-expand-lg.navbar-light{
   position: fixed;
   top: 0;
   width: 100%
-  
 }
